@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial Calculator</title>
+
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+        }
+
+        .box{
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        input, button{
+            padding: 12px;
+            font-size: 18px;
+            border-radius: 8px;
+            border: none;
+        }
+
+        input{
+            border: 2px solid #2575fc;
+        }
+
+        button{
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover{
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        #result{
+            margin-top: 20px;
+            font-size: 22px;
+            color: #2575fc;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h2>Factorial Calculator</h2>
+
+        <input type="number" id="num" placeholder="Enter a number">
+        <br><br>
+
+        <button onclick="findFactorial()">
+            Calculate
+        </button>
+
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function findFactorial()
+        {
+            let number = document.getElementById("num").value;
+            let factorial = 1;
+
+            for(let i = 1; i <= number; i++)
+            {
+                factorial *= i;
+            }
+
+            document.getElementById("result").innerHTML =
+            "Factorial = " + factorial;
+        }
+    </script>
+
+</body>
+</html>
